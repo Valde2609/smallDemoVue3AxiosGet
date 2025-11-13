@@ -18,10 +18,13 @@
       <input v-model="carModel" placeholder="Car Model"/>
       <input v-model="carPrice" placeholder="Car Price"/>
 
+
       <h2>{{ carVendor }} {{ carModel }} {{ carPrice }}</h2>
 
       <button v-on:click="getAllCars">Get Cars</button>
       <button v-on:click="gemBil">Gem Bil</button>
+      <input v-model="id" placeholder="id"/>
+      <button v-on:click="sletBil">Slet Bil</button>
       <h3>status: {{ statusKode }}</h3>
 
       <ul>

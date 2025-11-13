@@ -9,6 +9,7 @@ const app = Vue.createApp({
             carModel: '',
             carPrice: 0,
             statusKode: '',
+            id: '',
 
         }
     },
@@ -53,7 +54,23 @@ const app = Vue.createApp({
                 this.statusKode = response.status
             })
 
-        }
+        },
+        sletBil(){
+            console.log("er i metoden sletBil", this.id)
+            axios.delete(`${baseUrl}/${this.id}`)
+            // axios.delete(baseUrl + '/' + this.id)
+            .then(response => {
+                    console.log(response);
+                    console.log(response.data);
+                    this.statusKode = response.status
+
+                }
+            )
+            .catch(error => {
+                console.log(error);
+                this.statusKode = response.status
+            })
+        },
     },
     computed: {
         myComputed() {
