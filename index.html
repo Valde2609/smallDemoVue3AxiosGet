@@ -22,6 +22,7 @@
 
       <button v-on:click="getAllCars">Get Cars</button>
       <button v-on:click="gemBil">Gem Bil</button>
+      <h3>status: {{ statusKode }}</h3>
 
       <ul>
         <li v-for="car in carList">{{car.vendor}} - {{car.model}}</li>

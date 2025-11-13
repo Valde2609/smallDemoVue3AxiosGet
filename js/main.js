@@ -8,6 +8,7 @@ const app = Vue.createApp({
             carVendor: '',
             carModel: '',
             carPrice: 0,
+            statusKode: '',
 
         }
     },
@@ -23,11 +24,13 @@ const app = Vue.createApp({
                 response => {
                     console.log(response)
                     this.carList = response.data
+                    this.statusKode = response.status
                 }
             )
             .catch(
                  error => {
                     console.log(error)
+                    this.statusKode = response.status
                  } 
             )
 
@@ -41,11 +44,13 @@ const app = Vue.createApp({
             }).then(response => {
                     console.log(response);
                     console.log(response.data);
+                    this.statusKode = response.status
 
                 }
             )
             .catch(error => {
                 console.log(error);
+                this.statusKode = response.status
             })
 
         }
